@@ -50,8 +50,11 @@ main {
 	width: 100vh;
 	height: 100vh;
 	display: grid;
-	gap: 1px;
 	border: white 0.5px solid;
+}
+
+.gap {
+	gap: 0.1rem;
 }
 
 .cell-div {
@@ -97,4 +100,23 @@ main {
 
 .start_game-btn {
 	grid-column: 4;
+}
+
+.popup {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.not_hidden {
+	display: block;
 }

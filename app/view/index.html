@@ -15,6 +15,7 @@
 		<script type="module" src="./import_board_listener.js"></script>
 		<script type="module" src="./export_board.js"></script>
 		<script type="module" src="./start_game.js"></script>
+		<script type="module" src="./show_grid.js"></script>
 	</head>
 	<body>
 		<main>
@@ -28,34 +29,18 @@
 
 					<!-- ROWS -->
 					<label for="amount_of_rows-inp">Rows:</label>
-					<input
-						type="number"
-						id="amount_of_rows-inp"
-						value="40"
-						min="10"
-					/>
+					<input type="number" id="amount_of_rows-inp" value="40" min="10" />
 
 					<!-- COLUMNS -->
 					<label for="amount_of_columns-inp">Columns:</label>
-					<input
-						type="number"
-						id="amount_of_columns-inp"
-						value="40"
-						min="10"
-					/>
+					<input type="number" id="amount_of_columns-inp" value="40" min="10" />
 
 					<!-- GENERATIONS -->
 					<label for="amount_of_generations-inp">Generations: </label>
-					<input
-						type="number"
-						id="amount_of_generations-inp"
-						value="50"
-					/>
+					<input type="number" id="amount_of_generations-inp" value="50" />
 
 					<!-- GENERATIONS VELOCITY (GENS/SEC) -->
-					<label for="gen_velocity-inp"
-						>Generations per second:
-					</label>
+					<label for="gen_velocity-inp">Generations per second: </label>
 					<input type="number" id="gen_velocity-inp" value="20" />
 
 					<!-- SHOW GRID (CHECK) -->
@@ -63,24 +48,15 @@
 					<input type="checkbox" id="show_grid-check" />
 
 					<!-- CREATE BOARD -->
-					<button
-						type="button"
-						class="create_board-btn"
-						id="create_board-btn"
-					>
+					<button type="button" class="create_board-btn" id="create_board-btn">
 						Create Board
 					</button>
 
-					<!-- IMPORT BOARD -->
-					<button
-						type="button"
-						id="import_board-btn"
-						class="import_board-btn"
-					>
+					<!-- IMPORT BOARD + MODAL -->
+					<button type="button" id="import_board-btn" class="import_board-btn">
 						Import board
 					</button>
 
-					<!-- MODAL (LINKED WITH THE ABOVE'S BUTTON) -->
 					<dialog>
 						<h3>Insert the configuration as JSON</h3>
 						<input
@@ -88,26 +64,20 @@
 							placeholder="Insert here your JSON"
 							id="imported_config-inp"
 						/>
-						<button type="button" id="receive_json-btn">
-							Click me
-						</button>
+						<button type="button" id="receive_json-btn">Click me</button>
 					</dialog>
 
-					<!-- EXPORT BOARD (IN CLIPBOARD) -->
-					<button
-						type="button"
-						id="export_board-btn"
-						class="export_board-btn"
-					>
+					<!-- EXPORT BOARD (IN CLIPBOARD) + POPUP WINDOW -->
+					<button type="button" id="export_board-btn" class="export_board-btn">
 						Export board
 					</button>
 
+					<div id="popup_message" class="popup hidden">
+						<p>Configuration has been clipped in clipboard</p>
+					</div>
+
 					<!-- START GAME -->
-					<button
-						type="button"
-						id="start_game-btn"
-						class="start_game-btn"
-					>
+					<button type="button" id="start_game-btn" class="start_game-btn">
 						Start game
 					</button>
 				</form>

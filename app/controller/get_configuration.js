@@ -1,10 +1,11 @@
 import { get_alive_cells } from "../model/get_alive_cells.js";
+
 /**
  *
- * @param {Number} row
- * @param {Number} column
- * @param {Number} generations
- * @param {*} cells
+ * @param {HTMLInputElement} row
+ * @param {HTMLInputElement} column
+ * @param {HTMLInputElement} generations
+ * @param {NodeListOf<HTMLDivElement>} cells
  * @returns {JSON}
  */
 

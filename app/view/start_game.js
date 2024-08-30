@@ -1,12 +1,13 @@
-import { update_board } from "../model/update_board.js";
+import { get_all_cells } from "../controller/get_all_cells.js";
 import { get_configuration } from "../controller/get_configuration.js";
+import { update_board } from "../model/update_board.js";
 import {
-	row_cells,
 	column_cells,
+	gen_velocity,
 	generations,
+	row_cells,
 	start_game_btn,
 } from "./document_items.js";
-import { get_all_cells } from "../controller/get_all_cells.js";
 
 async function testFetch() {
 	try {
@@ -17,12 +18,7 @@ async function testFetch() {
 			},
 			mode: "cors",
 			body: JSON.stringify(
-				get_configuration(
-					row_cells,
-					column_cells,
-					generations,
-					get_all_cells()
-				)
+				get_configuration(row_cells, column_cells, generations, get_all_cells())
 			),
 		});
 		const data = await response.json();
@@ -34,6 +30,7 @@ async function testFetch() {
 
 start_game_btn.addEventListener("click", async () => {
 	let data = await testFetch();
+	let velocity = parseInt(1000 / gen_velocity.value);
 
 	let generationIndex = 0;
 
@@ -50,5 +47,5 @@ start_game_btn.addEventListener("click", async () => {
 	runGeneration();
 
 	// Set interval to run subsequent generations
-	const generationInterval = setInterval(runGeneration, 50); // Adjust time as needed
+	const generationInterval = setInterval(runGeneration, velocity); // Adjust time as needed
 });

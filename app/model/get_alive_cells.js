@@ -1,3 +1,7 @@
+/**
+ * @param {NodeListOf<HTMLDivElement>} cells
+ */
+
 export function get_alive_cells(cells) {
 	let alive_cells_ids = [];
 	cells.forEach((cell) => {

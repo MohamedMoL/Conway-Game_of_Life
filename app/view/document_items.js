@@ -17,6 +17,7 @@ export const show_grid = document.getElementById("show_grid-check");
 // OTHERS
 export const dialog = document.querySelector("dialog");
 export const board = document.getElementById("board");
+export const popup_message = document.getElementById("popup_message");
 
 // ------------------ FUNCTIONS AND VARIABLES ------------------
-export let alive_cells = [];
+export let pause_game = false;
